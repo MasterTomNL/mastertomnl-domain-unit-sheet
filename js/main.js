@@ -10,35 +10,6 @@ class MasterTomNLDomainUnitSheet5E extends dnd5e.applications.actor.ActorSheet5e
     
     async saveDomain(html) {
         console.log(`MasterTomNLDomainUnitSheet5E | Saving domain unit info to file for ${this.actor.name}`);
-        /*this.actor.setFlag(mName, "commander", this.getFieldVal(html, 'commander'));
-        this.actor.setFlag(mName, "size", this.getFieldVal(html, 'size'));
-        this.actor.setFlag(mName, "powerdie", this.getFieldVal(html, 'powerdie'));
-        this.actor.setFlag(mName, "diplomacy", this.getNumber(html, 'diplomacy'));
-        this.actor.setFlag(mName, "espionage", this.getNumber(html, 'espionage'));
-        this.actor.setFlag(mName, "lore", this.getNumber(html, 'lore'));
-        this.actor.setFlag(mName, "operations", this.getNumber(html, 'operations'));
-        this.actor.setFlag(mName, "communications", this.getNumber(html, 'communications'));
-        this.actor.setFlag(mName, "resolve", this.getNumber(html, 'resolve'));
-        this.actor.setFlag(mName, "resources", this.getNumber(html, 'resources'));
-        */
-        console.log(this.actor);
-    }
-    
-    /*
-     * get a field value from our character sheet
-     */
-    getFieldVal(html, name) {
-        return $(html).find('[name="flags.mastertomnl-domain-unit-sheet.'+name+'"]').val();
-    }
-    /* return FieldVal as a Number */
-    getNumber(html, name) {
-        return Number(this.getFieldVal(html, name));
-    }
-    
-    getUuid() {
-        return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-            (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-        );
     }
     
     static get defaultOptions() {
