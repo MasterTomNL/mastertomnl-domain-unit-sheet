@@ -1,0 +1,111 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="flex-body">
+        <div class="flex-row">
+            <div class="flex-profileimg">
+                <img class="profile" src="{{actor.img}}" title="{{actor.name}}" data-edit="img" placeholder="{{localize 'mtdus.OfficerImage'}}" />
+                <div class="flex-row">
+                    <h4 class="box-title">{{localize 'mtdus.Damage'}} x {{localize 'mtdus.Attacks'}}</h4>
+                    <div class="damage">                    
+                        <input name="flags.mastertomnl-domain-unit-sheet.damage" type="text" value="{{actor.flags.mastertomnl-domain-unit-sheet.damage}}" placeholder="1" />
+                        <label>x</label>
+                        <input name="flags.mastertomnl-domain-unit-sheet.attacks" type="text" value="{{actor.flags.mastertomnl-domain-unit-sheet.attacks}}" class="attacks" placeholder="1" />
+                    </div>
+                </div>
+            </div>
+            <div class="flex-notimg">
+                <div class="flex-block unit-basics header-block">
+                    <h1 class="charname">
+                        <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'mtdus.DomainName'}}" />
+                    </h1>
+                    <h2 class="commander">
+                        <input name="flags.mastertomnl-domain-unit-sheet.commander" type="text" value="{{actor.flags.mastertomnl-domain-unit-sheet.commander}}" placeholder="{{localize 'mtdus.Commander'}}" />
+                    </h2>
+                    <!--<input name="flags.mastertomnl-domain-unit-sheet.description" type="text" value="{{actor.flags.mastertomnl-domain-unit-sheet.description}}" placeholder="{{localize 'mtdus.Description'}}" /> -->
+                    
+                    <div class="flex-row unit-params">
+                        <!--<label>{{localize 'mtdus.Type'}}:</label>-->
+                        <select name="flags.mastertomnl-domain-unit-sheet.type">
+                            {{#select actor.flags.mastertomnl-domain-unit-sheet.type}}
+                            <option value="infantry">{{localize 'mtdus.Infantry'}}</option>
+                            <option value="citizenry">{{localize 'mtdus.Citizenry'}}</option>
+                            <option value="archery">{{localize 'mtdus.Archery'}}</option>
+                            <option value="artillery">{{localize 'mtdus.Artillery'}}</option>
+                            <option value="cavalry">{{localize 'mtdus.Cavalry'}}</option>
+                            <option value="aerial">{{localize 'mtdus.Aerial'}}</option>
+                            {{/select}}
+                        </select>
+                        <label>{{localize 'mtdus.Experience'}}:</label>
+                        <select name="flags.mastertomnl-domain-unit-sheet.experience">
+                            {{#select actor.flags.mastertomnl-domain-unit-sheet.experience}}
+                            <option value="commoner">{{localize 'mtdus.Commoner'}}</option>
+                            <option value="regular">{{localize 'mtdus.Regular'}}</option>
+                            <option value="veteran">{{localize 'mtdus.Veteran'}}</option>
+                            <option value="elite">{{localize 'mtdus.Elite'}}</option>
+                            <option value="superior">{{localize 'mtdus.Superior'}}</option>
+                            {{/select}}
+                        </select>
+                        <label>{{localize 'mtdus.Equipment'}}:</label>
+                        <select name="flags.mastertomnl-domain-unit-sheet.equipment">
+                            {{#select actor.flags.mastertomnl-domain-unit-sheet.equipment}}
+                            <option value="light">{{localize 'mtdus.Light'}}</option>
+                            <option value="medium">{{localize 'mtdus.Medium'}}</option>
+                            <option value="heavy">{{localize 'mtdus.Heavy'}}</option>
+                            <option value="superior">{{localize 'mtdus.Superior'}}</option>
+                            {{/select}}
+                        </select>
+                    </div>
+
+                    <!-- STATS -->
+                    <div class="flex-row stats">
+                        <ul>
+                            <li class="stat">
+                                <label title="{{localize 'mtdus.ATK_desc'}}">{{localize 'mtdus.ATK'}}</label>
+                                <input name="flags.mastertomnl-domain-unit-sheet.atk" type="text" value="{{numberFormat actor.flags.mastertomnl-domain-unit-sheet.atk decimals=0 sign=true}}" placeholder="0" />
+                            </li>
+                            <li class="stat">
+                                <label title="{{localize 'mtdus.DEF_desc'}}">{{localize 'mtdus.DEF'}}</label>
+                                <input name="flags.mastertomnl-domain-unit-sheet.def" type="text" value="{{numberFormat actor.flags.mastertomnl-domain-unit-sheet.def decimals=0 }}" placeholder="0" />
+                            </li>
+                            <li class="stat">
+                                <label title="{{localize 'mtdus.POW_desc'}}">{{localize 'mtdus.POW'}}</label>
+                                <input name="flags.mastertomnl-domain-unit-sheet.pow" type="text" value="{{numberFormat actor.flags.mastertomnl-domain-unit-sheet.pow decimals=0 sign=true}}" placeholder="0" />
+                            </li>
+                            <li class="stat">
+                                <label title="{{localize 'mtdus.TOU_desc'}}">{{localize 'mtdus.TOU'}}</label>
+                                <input name="flags.mastertomnl-domain-unit-sheet.tou" type="text" value="{{numberFormat actor.flags.mastertomnl-domain-unit-sheet.tou decimals=0 }}" placeholder="0" />
+                            </li>
+                            <li class="stat">
+                                <label title="{{localize 'mtdus.MOR_desc'}}">{{localize 'mtdus.MOR'}}</label>
+                                <input name="flags.mastertomnl-domain-unit-sheet.mor" type="text" value="{{numberFormat actor.flags.mastertomnl-domain-unit-sheet.mor decimals=0 sign=true}}" placeholder="0" />
+                            </li>
+                            <li class="stat">
+                                <label title="{{localize 'mtdus.COM_desc'}}">{{localize 'mtdus.COM'}}</label>
+                                <input name="flags.mastertomnl-domain-unit-sheet.com" type="text" value="{{numberFormat actor.flags.mastertomnl-domain-unit-sheet.com decimals=0 sign=true}}" placeholder="0" />
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- TRAITS -->
+                    <div class="flex-row traits-block">
+                        <!--<h3>{{localize 'mtdus.Traits'}}</h3>-->
+                        <p>
+                            {{#if @root.isGM}}
+                            <textarea rows="5" name="flags.mastertomnl-domain-unit-sheet.traits" placeholder="{{localize 'mtdus.TraitsDesc'}}">{{actor.flags.mastertomnl-domain-unit-sheet.traits}}</textarea>
+                            {{else}}
+                            {{actor.flags.mastertomnl-domain-unit-sheet.traits}}
+                            {{/if}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="unit-size">
+                <h4 class="box-title">{{localize 'mtdus.Size'}}</h4>
+                <input type="text" name="flags.mastertomnl-domain-unit-sheet.size" value="{{actor.flags.mastertomnl-domain-unit-sheet.size}}"  placeholder="6" />
+                <h4 class="box-title">{{localize 'mtdus.Tier'}}</h4>
+                <input type="text" name="flags.mastertomnl-domain-unit-sheet.tier" value="{{actor.flags.mastertomnl-domain-unit-sheet.tier}}" placeholder="1" />
+                <h4 class="box-title">{{localize 'mtdus.Remaining'}}</h4>
+                <input type="text" name="flags.mastertomnl-domain-unit-sheet.remaining" value="{{actor.flags.mastertomnl-domain-unit-sheet.remaining}}" placeholder="6" />
+            </div>
+        </div>
+    </div>
+</form>

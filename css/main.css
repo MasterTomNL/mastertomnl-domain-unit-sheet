@@ -1,0 +1,92 @@
+.mtdus .flex-profileimg {
+    width: 150px;
+    height: 150px;
+    float: left;
+}
+.mtdus .flex-notimg {
+    float: left;
+}
+.mtdus .unit-basics {
+    width: 400px;
+    padding-left: 10px;
+    float: left;
+}
+.mtdus .unit-size {
+    width: 90px;
+    display: inline-block;
+    float: right;
+    text-align: center;
+}
+.mtdus .unit-size input {
+    font-size: 4em;
+}
+.mtdus .flex-row {
+    clear: both;
+}
+.mtdus ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.mtdus h4 {
+    text-align: center;
+}
+.mtdus .damage {
+    margin-left: 30px;
+}
+.mtdus .damage * {
+    float: left;
+}
+.mtdus .damage label {
+    line-height: 53px;
+}
+.mtdus .damage input {
+    position: relative;
+    text-align: center;
+    width: 40px;
+    font-size: 3em;
+}
+.mtdus .unit-params, .mtdus .stats, .mtdus .traits-block {
+    margin-top: 10px;
+}
+.mtdus .unit-params label {
+    padding-left: 5px;
+}
+.mtdus .stat {
+    width: 60px;
+    display: inline-block;
+    text-align: center;
+}
+.mtdus .stat input {
+    font-size: 2em;
+}
+.mtdus .type-box {
+    width: 100px;
+    display: inline-block;
+    float: left;
+    text-align: center;
+}
+.mtdus .type-img {
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+.mtdus .infantry {
+    background-image: url('../img/infantry.png');
+}
+.mtdus .citizenry {
+    background-image: url('../img/citizenry.png');
+}
+.mtdus .archery {
+    background-image: url('../img/archery.png');
+}
+.mtdus .artillery {
+    background-image: url('../img/artillery.png');
+}
+.mtdus .cavalry {
+    background-image: url('../img/cavalry.png');
+}
+.mtdus .aerial {
+    background-image: url('../img/aerial.png');
+}
