@@ -5,8 +5,8 @@
     "authors": [{ "name": "Tom van der Lek" }],
     "compatibility": {
         "minimum": "10",
-        "verified": "10.291",
-        "maximum": "10"
+        "verified": "12",
+        "maximum": "12"
     },
     "url": "https://github.com/mastertomnl/mastertomnl-domain-unit-sheet",
     "version": "1.0",
