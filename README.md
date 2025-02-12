@@ -5,4 +5,5 @@ How to use:
 * Create a new Actor (Player) in Foundry and select the dnd5e.MasterTomNLDomainUnitSheet5E.
 
 # Changelog
+* 1.1 - Updated the modules.json to support Foundry v12
 * 1.0 - Initial release
